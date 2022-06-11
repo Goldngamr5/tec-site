@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace tec_site.Pages
 {
@@ -14,6 +16,7 @@ namespace tec_site.Pages
 
         public void OnGet()
         {
+            Console.WriteLine("Privacy page acessed");
         }
     }
 }

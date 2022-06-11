@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 
 namespace tec_site.Pages
@@ -22,6 +24,7 @@ namespace tec_site.Pages
         public void OnGet()
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            Console.WriteLine("Error UwU");
         }
     }
 }
