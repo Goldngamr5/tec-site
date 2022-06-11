@@ -1,0 +1,22 @@
+{
+  "name": "tec-site",
+  "version": "0.0.1",
+  "description": "The official website for The Energetic Convention!",
+  "main": "startup.cs",
+  "scripts": {
+    "test": "cd bin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "keywords": [
+    "cs",
+    "aspnet",
+    "tec"
+  ],
+  "author": "Unifox",
+  "license": "Apache-2.0",
+  "dependencies": {
+    }
+  }
