@@ -1,0 +1,14 @@
+﻿@page
+@model tec_site.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+<div class="text-center">
+    <h1 class="display-4">Where to contact us:</h1>
+    <p>Send us an email at: theenergeticconvention@gmail.com</p>
+    <p>Or start a gmail chat at the same adress</p>
+    @if (Controllers.HomeController.ErrorHappen)
+    {
+        <p>We see there has been an error, we are most likely working on it already! Hope you enjoyed the error page :D</p>
+    }
+</div>

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-#nullable enable
 namespace tec_site.Data
 {
-    public class tec_siteContext : DbContext
+    public class tec_siteContext : IdentityDbContext
     {
-        public tec_siteContext (DbContextOptions<tec_siteContext> options)
+        public tec_siteContext(DbContextOptions<tec_siteContext> options)
             : base(options)
         {
         }
-
     }
 }
