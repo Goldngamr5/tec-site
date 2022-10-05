@@ -9,6 +9,9 @@ namespace tec_site.Models.AccountViewModels
     public class ResetPasswordViewModel
     {
         [Required]
+        public string UsreName { get; set; }
+
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
 

@@ -7,6 +7,7 @@ namespace tec_site.Pages.AuthPages
     {
         public void OnGet()
         {
+            Console.WriteLine("login"); 
         }
     }
 }

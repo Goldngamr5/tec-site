@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using tec_site.EmailService;
 
 namespace tec_site.Services
 {
@@ -10,7 +11,12 @@ namespace tec_site.Services
     // For more details see this link http://go.microsoft.com/fwlink/?LinkID=532713
     public class AuthMessageSender : IEmailSender, ISmsSender
     {
-        public Task SendEmailAsync(string email, string subject, string message)
+        public void SendEmail(Message message)
+        {
+            return;
+        }
+
+        public Task SendEmailAsync(Message message)
         {
             // Plug in your email service here to send an email.
             return Task.FromResult(0);

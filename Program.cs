@@ -12,7 +12,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using tec_site.Data;
+using tec_site.EmailService;
 using tec_site.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -22,18 +24,25 @@ namespace tec_site
     {
         public static void Main(string[] args)
         {
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "3100";
+            var root = Directory.GetCurrentDirectory();
+            var dotenv = Path.Combine(root, ".env");
+            DotEnv.Load(dotenv);
+
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddRazorPages();
 
             builder.Services.AddDbContext<tec_siteContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
                 options.SignIn.RequireConfirmedAccount = true;
                 options.User.RequireUniqueEmail = false;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = false;
             })
                 .AddEntityFrameworkStores<tec_siteContext>();
 
@@ -44,8 +53,7 @@ namespace tec_site
             builder.Services.AddSession(options =>
             {
                 // Set a short timeout for easy testing.
-                options.IdleTimeout = TimeSpan.FromSeconds(10);
-                options.Cookie.HttpOnly = true;
+                options.IdleTimeout = TimeSpan.FromSeconds(300);
             });
 
             builder.Services.AddControllersWithViews();
@@ -70,9 +78,28 @@ namespace tec_site
                 ForwardedHeaders = ForwardedHeaders.XForwardedProto
             });
 
-            app.UseHttpsRedirection().UseStaticFiles().UseRouting().UseAuthorization();
+            app.UseHttpsRedirection().UseStaticFiles().UseRouting().UseAuthentication().UseAuthorization();
+
+            /*
+            EmailSender _emailSender = new EmailSender();
+            Console.WriteLine("sending startup email for test");
+            Dictionary<string, string> nameadressdict = new Dictionary<string, string>();
+            nameadressdict.Add("Unifox", "awsomejojop@gmail.com");
+            var message = new Message(nameadressdict, "Startup", "email is working", null);
+            _emailSender.SendEmail(message);
+            Console.WriteLine("email sent");
+            */
+
             app.MapRazorPages();
-            app.Run("http://0.0.0.0:" + port);
+
+            if (OperatingSystem.IsLinux())
+            {
+                app.Run("http://0.0.0.0:" + port);
+            }
+            else if (OperatingSystem.IsWindows())
+            {
+                app.Run("https://localhost:" + port);
+            }
         }
 
         

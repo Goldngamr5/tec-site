@@ -9,6 +9,9 @@ namespace tec_site.Models.AccountViewModels
     public class ForgotPasswordViewModel
     {
         [Required]
+        public string UserName { get; set; }
+
+        [Required]
         [EmailAddress]
         public string Email { get; set; }
     }

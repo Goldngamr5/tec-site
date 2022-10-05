@@ -3,9 +3,13 @@
     "secrets1": {
       "type": "secrets"
     },
-    "mssql1": {
+    "postgresql1": {
       "ignored": "true",
-      "type": "mssql"
+      "type": "postgresql"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnection"
     }
   }
 }

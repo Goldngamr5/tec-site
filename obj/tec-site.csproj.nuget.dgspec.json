@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\awsom\\source\\repos\\tec-site\\tec-site.csproj": {}
+    "Z:\\repos\\tec-site\\tec-site.csproj": {}
   },
   "projects": {
-    "C:\\Users\\awsom\\source\\repos\\tec-site\\tec-site.csproj": {
+    "Z:\\repos\\tec-site\\tec-site.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\awsom\\source\\repos\\tec-site\\tec-site.csproj",
+        "projectUniqueName": "Z:\\repos\\tec-site\\tec-site.csproj",
         "projectName": "tec-site",
-        "projectPath": "C:\\Users\\awsom\\source\\repos\\tec-site\\tec-site.csproj",
+        "projectPath": "Z:\\repos\\tec-site\\tec-site.csproj",
         "packagesPath": "C:\\Users\\awsom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\awsom\\source\\repos\\tec-site\\obj\\",
+        "outputPath": "Z:\\repos\\tec-site\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
             "Microsoft.AspNet.Identity.EntityFramework": {
               "target": "Package",
               "version": "[2.2.3, )"
@@ -91,6 +99,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "Sender": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
@@ -111,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

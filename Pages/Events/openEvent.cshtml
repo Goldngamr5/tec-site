@@ -1,0 +1,11 @@
+﻿@page
+@model openEventModel
+@{
+    ViewData["Title"] = "open time slot page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">open time slot</h1>
+    <a asp-area="" asp-page="/Events/joining"><button class="link-button-class" id="link-button" onclick="ButtonWait()">How to join an event.</button></a>
+    <p>This is an open time slot! As long as this time slot hasnt passed, you could host an event here! Whether in VRChat or another game, just head <a asp-area="" asp-page="/Events/hosting">here</a> to see how to host! We are always looking for someone to host an event in an open slot, so feel free to grab one while they're still available!</p>
+</div>

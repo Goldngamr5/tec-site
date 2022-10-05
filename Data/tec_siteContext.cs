@@ -9,5 +9,7 @@ namespace tec_site.Data
             : base(options)
         {
         }
+
+        public DbSet<Models.ApplicationUser> users => Set<Models.ApplicationUser>();
     }
 }

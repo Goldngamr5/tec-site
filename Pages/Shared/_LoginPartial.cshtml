@@ -1,4 +1,8 @@
-﻿<ul class="navbar-nav">
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
 @if (Controllers.HomeController.ErrorHappen == true)
 {
         <li class="nav-item">
@@ -7,10 +11,7 @@
 }
 else
 {
-    @using Microsoft.AspNetCore.Identity
-    @using tec_site.Models
-    @inject SignInManager<IdentityUser> SignInManager
-    @inject UserManager<IdentityUser> UserManager
+    
 
     @if (SignInManager.IsSignedIn(User))
     {
@@ -26,11 +27,15 @@ else
     else
     {
         <li class="nav-item">
+            <p>no account system, you will cause us errors...</p>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
+        
     }
 }
 </ul>

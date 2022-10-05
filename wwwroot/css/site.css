@@ -13,6 +13,333 @@ html {
   min-height: 100%;
 }
 
+a {
+    color: rgb(255, 210, 8)
+}
+a:hover {
+    color: rgb(220, 180, 0)
+}
+
 body {
-  margin-bottom: 60px;
+    margin-bottom: 30px;
+    background-image: url("/tec-logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 25%;
+    background-color: rgba(33, 37, 41, 1);
+    opacity: 1;
+    width: 99%;
+    height: 90%;
+}
+
+footer {
+    position:page;
+    text-align:center;
+}
+
+.container {
+    background-color: rgb(15, 15, 15);
+    opacity: 0.95;
+}
+
+.link-button-class {
+    background: #252159;
+    border: 1vmin Solid #252159;
+    border-radius: 10%;
+    color: white;
+}
+
+.link-button-class:hover {
+    background-color: #201654;
+    border-color: #201654;
+}
+
+#home-links:hover > a > .link-button-class {
+    opacity: 0.3;
+}
+
+#home-links:hover > a > .link-button-class:hover {
+    opacity: 1;
+}
+
+
+#bubble-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bubble {
+    height: max(300px, 30vw);
+    width: max(300px, 30vw);
+    background-color: rgb(255, 210, 8);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    animation: wave 2s ease-in-out infinite;
+}
+
+.mainpop {
+    height: max(75px, 30vw);
+    width: max(75px, 30vw);
+    background-color: rgba(255, 210, 8, 0);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: mainpop 0.6s ease-in-out 1;
+}
+
+.smallpop1 {
+    height: max(10px, 30vw);
+    width: max(10px, 30vw);
+    background-color: rgba(255, 210, 8, 0);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: smallpop1 0.6s ease-in-out 1;
+}
+
+.smallpop2 {
+    height: max(10px, 30vw);
+    width: max(10px, 30vw);
+    background-color: rgba(255, 210, 8, 0);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: smallpop2 0.6s ease-in-out 1;
+}
+
+.smallpop3 {
+    height: max(10px, 30vw);
+    width: max(10px, 30vw);
+    background-color: rgba(255, 210, 8, 0);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: smallpop3 0.6s ease-in-out 1;
+}
+
+.smallpop4 {
+    height: max(10px, 30vw);
+    width: max(10px, 30vw);
+    background-color: rgba(255, 210, 8, 0);
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: smallpop4 0.6s ease-in-out 1;
+}
+
+@keyframes wave {
+    from, to {
+        transform: translate(-50%, 0%);
+    }
+
+    50% {
+        transform: translate(-50%, -20%);
+    }
+}
+
+@keyframes mainpop {
+    from {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 0px;
+        width: 0px;
+    }
+
+    50% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 100px;
+        width: 100px;
+        transform: translate(-45px, -45px);
+    }
+
+    90% {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 100px;
+        width: 100px;
+        transform: translate(-45px, -45px);
+    }
+
+    to {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+}
+
+@keyframes smallpop1 {
+    from {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+
+    59% {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    60% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    90% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(-120px, -100px);
+    }
+
+    to {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        transform: translate(-120px, -100px);
+    }
+}
+
+@keyframes smallpop2 {
+    from {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+
+    59% {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    60% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    90% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(-80px, 100px);
+    }
+
+    to {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        transform: translate(-100px, 80px);
+    }
+}
+
+@keyframes smallpop3 {
+    from {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+
+    59% {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    60% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    90% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(110px, 90px);
+    }
+
+    to {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        transform: translate(110px, 90px);
+    }
+}
+
+@keyframes smallpop4 {
+    from {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+    }
+
+    59% {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    60% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(-5px, -5px);
+    }
+
+    90% {
+        background-color: rgb(255, 210, 8);
+        opacity: 1;
+        height: 20px;
+        width: 20px;
+        transform: translate(100px, -100px);
+    }
+
+    to {
+        background-color: rgb(255, 210, 8);
+        opacity: 0;
+        height: 0px;
+        width: 0px;
+        transform: translate(100px, -100px);
+    }
 }
