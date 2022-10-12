@@ -9,27 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Pages\Account\apple-touch-icon-120x120-precomposed.png" />
-    <None Remove="Pages\Account\apple-touch-icon-152x152-precomposed.png" />
-    <None Remove="Pages\Account\favicon.ico" />
+    <None Remove="Models\ContactSendModel.cs~RF3f683f1.TMP" />
     <None Remove="Pages\Events\apple-touch-icon-120x120-precomposed.png" />
     <None Remove="Pages\Events\apple-touch-icon-152x152-precomposed.png" />
     <None Remove="Pages\Events\favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Pages\Account\apple-touch-icon-120x120-precomposed.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Pages\Account\apple-touch-icon-152x152-precomposed.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Pages\Account\favicon.ico">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="Pages\Events\apple-touch-icon-120x120-precomposed.png">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -45,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\Accounts\api.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
     <None Include="wwwroot\tec-logo.png" />
   </ItemGroup>
@@ -58,6 +45,7 @@
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="MailKit" Version="3.3.0" />
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
@@ -78,7 +66,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Data\Tables\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
   
@@ -86,12 +74,12 @@
     <None Update=".env">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Data\Databases\UserDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\Databases\UserDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="UniEncryption">
+      <HintPath>UniEncryption.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

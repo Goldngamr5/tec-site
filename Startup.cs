@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,16 +29,9 @@ namespace tec_site
         {
             services.AddRazorPages();
 
-            services.AddDbContext<tec_siteContext>(options =>
-                    options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<IdentityUser, IdentityRole>(options =>
-            {
-                options.User.RequireUniqueEmail = false;
-            })
-                .AddEntityFrameworkStores<tec_siteContext>();
-
             services.AddMvc();
+
+            services.AddHttpContextAccessor();
 
             // Adds a default in-memory implementation of IDistributedCache.
             services.AddDistributedMemoryCache();
@@ -55,23 +47,14 @@ namespace tec_site
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            app.UseExceptionHandler("/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

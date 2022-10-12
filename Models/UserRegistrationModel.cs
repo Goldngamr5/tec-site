@@ -4,9 +4,10 @@ namespace tec_site.Models
 {
     public class UserRegistrationModel
     {
+        [Required(ErrorMessage = "Username is required")]
         public string UserName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        [Required(ErrorMessage = "Discord Username is required")]
+        public string DiscordUser { get; set; }
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress]
         public string Email { get; set; }

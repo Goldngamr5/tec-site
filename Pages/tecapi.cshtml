@@ -1,0 +1,12 @@
+﻿@page
+@model tecapiModel
+@{
+    ViewData["Title"] = "API Info";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h2>We have two api endpoints:</h2>
+<h3>/accounts/api:</h3>
+<p>Used to get a list of all registered user's usernames. <b>Sensitive info such as passwords and emails are not shown through this API. Your info is safely stored and unable to be accessed by anyone.</b></p>
+<h3>/events/api:</h3>
+<p>Used to get a list of all events.</p>

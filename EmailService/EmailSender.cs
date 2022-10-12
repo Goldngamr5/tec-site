@@ -34,25 +34,22 @@ namespace tec_site.EmailService
         private MimeMessage CreateEmailMessage(Message message)
         {
             var emailMessage = new MimeMessage();
-            emailMessage.From.Add(new MailboxAddress("The Energetic Convention", "theenergeticconvention@gmail.com"));
+            emailMessage.From.Add(message.From);
             emailMessage.To.AddRange(message.To);
             emailMessage.Subject = message.Subject;
 
-            var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<h2 style='color:red;'>{0}</h2>", message.Content) };
+            var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<h2 style='color:white;'>{0}</h2>", message.Content) };
 
-            if (message.Attachments != null && message.Attachments.Any())
+            if (message.Attachments != null)
             {
                 byte[] fileBytes;
-                foreach (var attachment in message.Attachments)
-                {
                     using (var ms = new MemoryStream())
                     {
-                        attachment.CopyTo(ms);
+                        message.Attachments.CopyTo(ms);
                         fileBytes = ms.ToArray();
                     }
 
-                    bodyBuilder.Attachments.Add(attachment.FileName, fileBytes, ContentType.Parse(attachment.ContentType));
-                }
+                    bodyBuilder.Attachments.Add(message.Attachments.FileName, fileBytes, ContentType.Parse(message.Attachments.ContentType));
             }
 
             emailMessage.Body = bodyBuilder.ToMessageBody();

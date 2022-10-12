@@ -5,11 +5,21 @@
 }
 <div class="text-center">
     <h1 class="display-4">Where to contact us:</h1>
-    <p>Send us an email at: theenergeticconvention@gmail.com,</p>
+    <div class="container">
+      <p>Using this form:</p>
+      <form asp-page-handler="send"  method="post">
+    
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email" required>
+    
+        <label for="message">Message</label>
+        <textarea id="message" name="usermessage" placeholder="Send us a message!" style="height:200px"></textarea>
+    
+        <input type="submit" value="Send!">
+    
+      </form>
+    </div>
+    <p>Or send us an email at: theenergeticconvention@gmail.com,</p>
     <p>start a gmail chat at the same adress,</p>
     <p>or message us on discord at Convention Staff#5325</p>
-    @if (Controllers.HomeController.ErrorHappen)
-    {
-        <p>We see there has been an error, we are most likely working on it already! Hope you enjoyed the error page :D</p>
-    }
 </div>

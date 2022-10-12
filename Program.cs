@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +14,7 @@ using tec_site.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Newtonsoft.Json;
 
 namespace tec_site
 {
@@ -32,21 +30,9 @@ namespace tec_site
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddRazorPages();
 
-            builder.Services.AddDbContext<tec_siteContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
-                options.SignIn.RequireConfirmedAccount = true;
-                options.User.RequireUniqueEmail = false;
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-                options.Lockout.MaxFailedAccessAttempts = 5;
-                options.Lockout.AllowedForNewUsers = false;
-            })
-                .AddEntityFrameworkStores<tec_siteContext>();
-
             builder.Services.AddMvc();
+
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddDistributedMemoryCache();
 
@@ -65,20 +51,17 @@ namespace tec_site
                 var services = scope.ServiceProvider;
             }
 
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            app.UseExceptionHandler("/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
+            
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedProto
             });
 
-            app.UseHttpsRedirection().UseStaticFiles().UseRouting().UseAuthentication().UseAuthorization();
+            app.UseHttpsRedirection().UseStaticFiles().UseRouting();
 
             /*
             EmailSender _emailSender = new EmailSender();

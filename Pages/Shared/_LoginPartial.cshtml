@@ -1,41 +1,19 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+﻿@inject IHttpContextAccessor HttpContextAccessor
 
 <ul class="navbar-nav">
-@if (Controllers.HomeController.ErrorHappen == true)
-{
-        <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-page="/Contact">Contact us!</a>
-        </li>
-}
-else
-{
-    
-
-    @if (SignInManager.IsSignedIn(User))
+    @if (HttpContextAccessor.HttpContext.Request.Cookies["loggedIn"] != "true")
     {
         <li class="nav-item">
-            <a  class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+            <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Register">Register</a>
         </li>
         <li class="nav-item">
-            <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button  type="submit" class="nav-link btn btn-link text-light">Logout</button>
-            </form>
+            <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Login">Login</a>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <p>no account system, you will cause us errors...</p>
+            <p class="text-light">Logged In!</p>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        </li>
-        
     }
-}
 </ul>
