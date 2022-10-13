@@ -94,7 +94,7 @@ namespace tec_site.Pages.Accounts
                     {
                         cookieOptions.Expires = DateTime.MaxValue;
                     }
-                    Response.Cookies.Append("loggedIn", "true", cookieOptions);
+                    Response.Cookies.Append("loggedIn", uname, cookieOptions);
                     return RedirectToPage("../Index");
                 }
                 else

@@ -1,0 +1,13 @@
+﻿@page
+@model tec_site.Pages.Accounts.logoutModel
+@{
+    ViewData["Title"] = "Logout page";
+}
+<div class="col-sm-4">
+    <div class="container">
+        <form asp-page-handler="logout" method="post">
+            <button type="submit" class="link-button-class">Log out</button>
+              <button type="button" class="cancelbtn">Cancel</button>
+        </form>
+    </div>
+  </div>

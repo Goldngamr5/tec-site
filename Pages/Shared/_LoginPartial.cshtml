@@ -1,7 +1,7 @@
 ﻿@inject IHttpContextAccessor HttpContextAccessor
 
 <ul class="navbar-nav">
-    @if (HttpContextAccessor.HttpContext.Request.Cookies["loggedIn"] != "true")
+    @if (HttpContextAccessor.HttpContext.Request.Cookies["loggedIn"] != null)
     {
         <li class="nav-item">
             <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Register">Register</a>
@@ -13,7 +13,7 @@
     else
     {
         <li class="nav-item">
-            <p class="text-light">Logged In!</p>
+            <p class="text-light">Logged In! <a class="nav-link text-light" style="color: rgb(255, 210, 8)" asp-area="" asp-page="/Accounts/myaccount"> Your Account </a> <a class="nav-link text-light" style="color: red" asp-area="" asp-page="/Accounts/Logout"> Logout</a></p>
         </li>
     }
 </ul>

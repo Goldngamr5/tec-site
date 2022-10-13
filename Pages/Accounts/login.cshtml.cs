@@ -37,7 +37,7 @@ namespace tec_site.Pages.Accounts
                 {
                     cookieOptions.Expires = DateTime.MaxValue;
                 }
-                Response.Cookies.Append("loggedIn", "true", cookieOptions);
+                Response.Cookies.Append("loggedIn", uname, cookieOptions);
                 Console.WriteLine($"logged in {uname}");
                 return RedirectToPage("../Index");
             }
