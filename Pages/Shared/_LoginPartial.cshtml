@@ -1,19 +1,23 @@
 ﻿@inject IHttpContextAccessor HttpContextAccessor
+@using System.Web;
 
 <ul class="navbar-nav">
-    @if (HttpContextAccessor.HttpContext.Request.Cookies["loggedIn"] != null)
+    @if (!HttpContextAccessor.HttpContext.Request.Cookies.ContainsKey("loggedIn"))
     {
         <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Register">Register</a>
+            <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Register"><i class="fa-solid fa-user-plus"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Login">Login</a>
+            <a class="nav-link text-light" asp-area="" asp-page="/Accounts/Login"><i class="fa-solid fa-right-to-bracket"></i></a>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <p class="text-light">Logged In! <a class="nav-link text-light" style="color: rgb(255, 210, 8)" asp-area="" asp-page="/Accounts/myaccount"> Your Account </a> <a class="nav-link text-light" style="color: red" asp-area="" asp-page="/Accounts/Logout"> Logout</a></p>
+            <a class="nav-link text-light" style="color: rgb(255, 210, 8)" asp-area="" asp-page="/Accounts/myaccount"><i class="fa-solid fa-user"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" style="color: red" asp-area="" asp-page="/Accounts/Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
         </li>
     }
 </ul>

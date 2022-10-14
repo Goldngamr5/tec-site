@@ -38,7 +38,7 @@ namespace tec_site.EmailService
             emailMessage.To.AddRange(message.To);
             emailMessage.Subject = message.Subject;
 
-            var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<h2 style='color:white;'>{0}</h2>", message.Content) };
+            var bodyBuilder = new BodyBuilder { HtmlBody = string.Format("<h2 style='color:white; background-color: rgba(33, 37, 41, 1);'>{0}</h2>", message.Content) };
 
             if (message.Attachments != null)
             {

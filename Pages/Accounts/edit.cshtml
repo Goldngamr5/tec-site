@@ -9,13 +9,13 @@
         <h3>Edit Account Details</h3>
         <form asp-page-handler="edit" method="post">
           <label for="newuname"><b>Current Username: @Model.uname</b></label>
-          <input type="text" id="newuname" placeholder="Enter new Username" name="newuname" required/>
+          <input type="text" id="newuname" placeholder="Enter new Username" name="newuname"/>
 
           <label for="newdisuname"><b>Current Discord Username: @Model.userData[0]</b></label>
-          <input type="text" id="newdisuname" placeholder="Ex. Joe#1234" name="newdisuname" required/>
+          <input type="text" id="newdisuname" placeholder="Enter New Discord Username  Ex. Joe#1234" name="newdisuname"/>
 
           <label for="newemail"><b>Current Email: @Model.userData[1]</b></label>
-          <input type="text" id="email" placeholder="Enter Email" name="email" required/>
+          <input type="text" id="newemail" placeholder="Enter New Email" name="newemail" />
           
           <label for="psw"><b>Password</b></label>
           <input type="password" id="psw" placeholder="Enter Password to continue" name="psw" required/>
@@ -27,30 +27,8 @@
           </label>
         </form>
     </div>
-    <div class="container">
-        <h3>Change Password</h3>
-        <form asp-page-handler="pswchange" method="post">
-          <label for="psw"><b>Password</b></label>
-          <input type="password" id="psw" placeholder="Enter Current Password" name="newuname" required/>
-
-          <label for="confpsw"><b>Confirm Password</b></label>
-          <input type="password" id="confpsw" placeholder="Confirm Current Password" name="confpsw" required/>
-
-          <label for="newpsw"><b>New Password</b></label>
-          <input type="password" id="newpsw" placeholder="Enter New Password" name="newpsw" required/>
-          
-          <label for="confnewpsw"><b>Confirm New Password</b></label>
-          <input type="password" id="confnewpsw" placeholder="Confirm New Password" name="confnewpsw" required/>
-
-          <input type="submit" class="link-button-class" value="Change Password">
-
-          <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-
-        </form>
-    </div>
+    
     <div class=container>
-        <span class="psw"><a asp-area="" asp-page="Accounts/ForgotPassword">Forgot Password?</a></></span>
+        <a asp-area="" asp-page="/Accounts/ForgotPassword">Forgot Password?</a>
     </div>
   </div>

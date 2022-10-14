@@ -40,7 +40,7 @@ namespace tec_site.Pages.Accounts
                 CookieOptions cookieOptions = new();
 
                 DateTime cookieEnd = DateTime.Now;
-                cookieEnd.AddMinutes(10);
+                cookieEnd = cookieEnd.AddMinutes(10);
                 cookieOptions.Expires = cookieEnd;
 
                 Response.Cookies.Append("resetPsw", uname, cookieOptions);
