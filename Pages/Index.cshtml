@@ -6,17 +6,51 @@
 
 <html>
 <body>
-
 <div class="text-center">
     <h1 class="display-4">Welcome!</h1>
+    <h2>Website back soon!</h2>
+    <h4 id="timeleft"></h4>
+    <!--<h3>Current local con time: @Program.mainNow</h3>
     <p>Use the links above to check out our merch store, or below to join the current event, see the event schedule, and more! </p>
+    <p>The convention is now over. Thank you to those who attended, and those who helped with the convention. We hope to see you next year in early April. Until then, goodbye.</p>
     <div id="home-links">
         <a asp-area="" asp-page="/Events/CurrentEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Join the current event now! <i class="fa-solid fa-calendar-check"></i></button></a>
         <a asp-area="" asp-page="/Events"><button class="link-button-class" id="link-button" onclick="ButtonWait()">See a list of events! <i class="fa-solid fa-calendar-days"></i></button></a>
         <a href="https://discord.gg/rGBn2uW"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Join the Discord! <i class="fa-brands fa-discord"></i></button></a>
         <a asp-area="" asp-page="/Events/hosting"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Host an event of your own! <i class="fa-solid fa-calendar-plus"></i></button></a>
         <a asp-area="" asp-page="/dealersDen"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Grab a spot at our Dealers Den!</button></a>
-    </div>
+    </div>-->
 </div>
 </body>
 </html>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Mar 31, 2023 16:00:00").getTime();
+
+// Update the count down every 0.5 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("timeleft").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timeleft").innerHTML = "The convention has started!";
+  }
+}, 500);
+</script>

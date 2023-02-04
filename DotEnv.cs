@@ -11,7 +11,7 @@
 
             if (!File.Exists(filePath))
             {
-                Console.WriteLine("must be heroku, no .env");
+                Console.WriteLine("error, no .env");
                 return;
             }
 
@@ -29,6 +29,14 @@
                 Console.WriteLine("'"+parts[0]+"'" +"'"+parts[1]+"'");
                 Environment.SetEnvironmentVariable(parts[0], parts[1]);
             }
+        }
+
+        public static void Write(string filePath, string variables)
+        {
+            string[] filecont = File.ReadAllLines(filePath);
+            filecont = filecont.SkipLast(1).ToArray();
+            filecont = filecont.Append(variables).ToArray();
+            File.WriteAllLines(filePath, filecont);
         }
     }
 }

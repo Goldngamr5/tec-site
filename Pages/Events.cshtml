@@ -8,38 +8,38 @@
     <h1 class="display-4">Convention Events</h1>
         <p>All event times in Mountain Standard Time (MST). Events marked with QA are quest compatable worlds, and events marked with NQ are non-quest compatable worlds. Use this guide if you don't know how to join: <a asp-area="" asp-page="/Events/joining">How to join an event.</a> Any event marked with * means that event is not in VRChat, click on those events to see what they are about and their specific joining instructions! Want to host an event? Click <a asp-area="" asp-page="/Events/hosting">Here!</a> You can apply to host an event right up until a couple hours before the convention starts!</p>
         <p><a asp-area="" asp-page="/Events/AlwaysOpen">This</a> world instance will be always open for the length of the convention, so come hang out while you wait between events you can and want to attend, or just any time!</p>
-    <h2>Current Event:</h2>
+    <h2 id="current">Current Event:</h2>
         <a asp-area="" asp-page="/Events/CurrentEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Join the current event now!</button></a>
-    <h2>Upcoming Events:</h2>
-        <h3>Friday, Oct. 14:</h3>
-            <p>QA 4pm - 5pm: <a asp-area="" asp-page="/Events/Event1"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Opening of the convention!</button></a></p>
-            <p>QA 5pm - 6pm: <a asp-area="" asp-page="/Events/Event2"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Prop Hunt!</button></a></p>
-            <p>   6pm - 7pm: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
-            <p>NQ 7pm - 8pm: <a asp-area="" asp-page="/Events/Event3"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Furry Games!</button></a></p>
-        <h3>Saturday, Oct. 15:</h3>
-            <p>   8am - 9am: <a asp-area="" asp-page="/Events/Event4"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Minecraft mini games! In minecraft *</button></a></p>
-            <p>NQ 9am - 11am: <a asp-area="" asp-page="/Events/Event5"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tycoon Fun!</button></a></p>
-            <p>QA 11am - 12pm: <a asp-area="" asp-page="/Events/Event6"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tag!</button></a></p>
-            <p>   12pm - 12:30pm: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
-            <p>   12:30pm - 1pm: <a asp-area="" asp-page="/Events/Event14"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Fursuit Meet & Greet! *</button></a></p>
-            <p>NQ 1pm - 2pm: <a asp-area="" asp-page="/Events/Event7"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Minesweeper!</button></a></p>
-            <p>QA 2pm - 3pm: <a asp-area="" asp-page="/Events/Event8"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Among Us!</button></a></p>
-            <p>QA 3pm - 4pm: <a asp-area="" asp-page="/Events/Event2"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Prop Hunt!</button></a></p>
-            <p>   4pm - 5pm: <a asp-area="" asp-page="/Events/Event9"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Beat Saber Battles! In Beat Saber *</button></a></p>
-            <p>QA 5pm - 6pm: <a asp-area="" asp-page="/Events/Event10"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Cards Against Humanity!</button></a></p>
-            <p>   6pm - 7pm: <a asp-area="" asp-page="/Events/Event15"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Jackbox Games! *</button></a></p>
-            <p>QA 7pm - 8pm: <a asp-area="" asp-page="/Events/Event11"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Flight and Fight!</button></a></p>
-            <p>   8pm - 9pm: <a asp-area="" asp-page="/Events/Event16"><button class="link-button-class" id="link-button" onclick="ButtonWait()">DJ stream! *</button></a></p>
-        <h3>Sunday, Oct. 16:</h3>
-            <p>   8am - 9am: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
-            <p>QA 9am - 10am: <a asp-area="" asp-page="/Events/Event2"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Prop Hunt!</button></a></p>
-            <p>QA 10am - 11am: <a asp-area="" asp-page="/Events/Event6"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tag!</button></a></p>
-            <p>QA 11am - 12pm: <a asp-area="" asp-page="/Events/Event10"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Cards Against Humanity!</button></a></p>
-            <p>   12pm - 1pm: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
-            <p>NQ 1pm - 3pm: <a asp-area="" asp-page="/Events/Event5"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tycoon Fun!</button></a></p>
-            <p>QA 3pm - 4pm: <a asp-area="" asp-page="/Events/Event12"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Putt Putt Quest!</button></a></p>
-            <p>   4pm - 5pm: <a asp-area="" asp-page="/Events/Event9"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Beat Saber Battles! In Beat Saber *</button></a></p>
-            <p>QA 5pm - 6pm: <a asp-area="" asp-page="/Events/Event13"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Closing of the Convention.</button></a></p>
-    <h2>Past Events:</h2>
-        <p>None Past!</p>
+    <h2 id="upcoming">Upcoming Events:</h2>
+        <p>The convention is now over. Thank you to those who attended. The schedule will likely be similar for next time. We will hopefully have some more events outside of VRChat, and have multiple events running at the same time.</p>
+    <h2 id="past">Past Events:</h2>
+        <h3 id="fri">Friday, Mar. 31:</h3>
+            <p id="1">QA 4pm - 5pm: <a asp-area="" asp-page="/Events/Event1"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Opening of the convention!</button></a></p>
+            <p id="2">QA 5pm - 6pm: <a asp-area="" asp-page="/Events/Event2"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Prop Hunt!</button></a></p>
+            <p id="3">   6pm - 7pm: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
+            <p id="4">NQ 7pm - 8pm: <a asp-area="" asp-page="/Events/Event3"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Furry Games!</button></a></p>
+        <h3 id="sat">Saturday, Apr. 1:</h3>
+            <p id="5">   8am - 9am: <a asp-area="" asp-page="/Events/Event4"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Minecraft mini games! In minecraft *</button></a></p>
+            <p id="6">NQ 9am - 11am: <a asp-area="" asp-page="/Events/Event5"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tycoon Fun!</button></a></p>
+            <p id="7">QA 11am - 12pm: <a asp-area="" asp-page="/Events/Event6"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tag!</button></a></p>
+            <p id="8">   12pm - 12:30pm: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
+            <p id="9">   12:30pm - 1pm: <a asp-area="" asp-page="/Events/Event14"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Fursuit Meet & Greet! *</button></a></p>
+            <p id="10">NQ 1pm - 2pm: <a asp-area="" asp-page="/Events/Event7"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Minesweeper!</button></a></p>
+            <p id="11">QA 2pm - 3pm: <a asp-area="" asp-page="/Events/Event8"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Among Us!</button></a></p>
+            <p id="12">QA 3pm - 4pm: <a asp-area="" asp-page="/Events/Event2"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Prop Hunt!</button></a></p>
+            <p id="13">   4pm - 5pm: <a asp-area="" asp-page="/Events/Event9"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Beat Saber Battles! In Beat Saber *</button></a></p>
+            <p id="14">QA 5pm - 6pm: <a asp-area="" asp-page="/Events/Event10"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Cards Against Humanity!</button></a></p>
+            <p id="15">   6pm - 7pm: <a asp-area="" asp-page="/Events/Event15"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Jackbox Games! *</button></a></p>
+            <p id="16">QA 7pm - 8pm: <a asp-area="" asp-page="/Events/Event11"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Flight and Fight!</button></a></p>
+            <p id="17">   8pm - 9pm: <a asp-area="" asp-page="/Events/Event16"><button class="link-button-class" id="link-button" onclick="ButtonWait()">DJ stream! * <b>CANCELLED</b></button></a></p>
+        <h3 id="sun">Sunday, Apr. 2:</h3>
+            <p id="18">   8am - 9am: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
+            <p id="19">QA 9am - 10am: <a asp-area="" asp-page="/Events/Event2"><button class="link-button-class" id="link-button" onclick="ButtonWait()">VRC Prop Hunt!</button></a></p>
+            <p id="20">QA 10am - 11am: <a asp-area="" asp-page="/Events/Event6"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tag!</button></a></p>
+            <p id="21">QA 11am - 12pm: <a asp-area="" asp-page="/Events/Event10"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Cards Against Humanity!</button></a></p>
+            <p id="22">   12pm - 1pm: <a asp-area="" asp-page="/Events/openEvent"><button class="link-button-class" id="link-button" onclick="ButtonWait()">open time slot</button></a></p>
+            <p id="23">NQ 1pm - 3pm: <a asp-area="" asp-page="/Events/Event5"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Udon Tycoon Fun!</button></a></p>
+            <p id="24">QA 3pm - 4pm: <a asp-area="" asp-page="/Events/Event12"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Putt Putt Quest!</button></a></p>
+            <p id="25">   4pm - 5pm: <a asp-area="" asp-page="/Events/Event9"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Beat Saber Battles! In Beat Saber *</button></a></p>
+            <p id="26">QA 5pm - 6pm: <a asp-area="" asp-page="/Events/Event13"><button class="link-button-class" id="link-button" onclick="ButtonWait()">Closing of the Convention.</button></a></p>
 </div>
